@@ -1,0 +1,4 @@
+<div id="<%= dom_id invitation %>">
+  You are invited by <%= invitation.inviter.username %> <br>
+  to join <%= Event.find(invitation.invited_event_id).title %>
+</div>

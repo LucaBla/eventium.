@@ -1,0 +1,9 @@
+<h1>New invitation <%= @event.id %></h1>
+
+<%= render "form", invitation: @invitation, event: @event %>
+
+<br>
+
+<div>
+  <%= link_to "Back to invitations", invitations_path %>
+</div>

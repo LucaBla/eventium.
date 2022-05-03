@@ -1,6 +1,7 @@
 <h2>Profile of <%= @user.username %></h2>
 
-<div id="events">
+<div id="hosted-events">
+  <h3>Hosted Events:</h3>
   <% @user.hosted_events.each do |event| %>
     <%= render event %>
     <p>
@@ -8,5 +9,7 @@
     </p>
   <% end %>
 </div>
+
+<%= render 'events/attended_events' %>
 
 <%= link_to 'Root', root_path %>

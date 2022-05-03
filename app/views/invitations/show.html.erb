@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @invitation %>
+
+<div>
+  <%= link_to "Edit this invitation", edit_invitation_path(@invitation) %> |
+  <%= link_to "Back to root", root_path %>
+
+   <%= button_to "Accept this invitation", accept_invitation_path, method: :get %>
+  <%= button_to "Ignore this invitation", @invitation, method: :delete %>
+</div>

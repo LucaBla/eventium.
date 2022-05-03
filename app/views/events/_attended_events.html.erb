@@ -1,0 +1,21 @@
+<div id="attended-events">
+  <h3>Attended Events:</h3>
+  <h4>Future Events:</h4>
+  <% @user.attended_events.each do |event| %>
+    <% if event.event_date >= DateTime.now %>
+      <%= render event %>
+      <p>
+        <%= link_to "Show this event", event %>
+      </p>
+    <% end %>
+  <% end %>
+  <h4>Past Events:</h4>
+  <% @user.attended_events.each do |event| %>
+    <% if event.event_date < DateTime.now %>
+      <%= render event %>
+      <p>
+        <%= link_to "Show this event", event %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
