@@ -1,0 +1,12 @@
+<h2>Profile of <%= @user.username %></h2>
+
+<div id="events">
+  <% @user.hosted_events.each do |event| %>
+    <%= render event %>
+    <p>
+      <%= link_to "Show this event", event %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to 'Root', root_path %>

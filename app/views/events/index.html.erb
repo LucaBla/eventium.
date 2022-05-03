@@ -1,4 +1,3 @@
-<p style="color: green"><%= notice %></p>
 
 <h1>Events</h1>
 
@@ -12,3 +11,8 @@
 </div>
 
 <%= link_to "New event", new_event_path %>
+
+<%= link_to "Profile", {controller: 'users', action: :show, id: current_user.id} %>
+<%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+
+

@@ -3,5 +3,17 @@
     <strong>Title:</strong>
     <%= event.title %>
   </p>
+  <%= event.event_date %>
+  <br>
+  <%= event.description %>
+  <br>
+
+  <strong>Attendees:</strong>
+  <div id="attendees">
+  <% event.attendees.each  do |attendee| %>
+    <p><%= attendee.username %></p>
+  <% end %>
+</div>
+<br>
 
 </div>
