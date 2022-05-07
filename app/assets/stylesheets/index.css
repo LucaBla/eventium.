@@ -1,0 +1,134 @@
+h2{
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+h3{
+  font-size: 22px;
+  margin-bottom: 0px;
+  margin-top: 0px
+}
+
+.index-pic{
+  width: 100vw;
+  height: 100%;
+  border-bottom: 1px solid white;
+  background-size: cover;
+}
+
+.image-wrapper{
+  position:relative;
+  display:inline-block;
+}
+
+.image-wrapper:after{
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  display:inline-block;
+  background: linear-gradient(to top, rgb(255, 255, 255, 1) 5%,rgb(255, 255, 255, 0.8) 15%,rgba(255, 255, 255, 0.1) 30%,rgba(255, 255, 255, 0) 40%);
+}
+
+.events-container{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  padding: 20px;
+  gap: 20px;
+
+}
+
+.upcoming-events{
+  margin-bottom: 100px;
+}
+
+.upcoming-events h2{
+  padding-left: 20px;
+}
+
+.past-events{
+  margin-bottom: 150px;
+}
+
+.past-events h2{
+  padding-left: 20px;
+}
+
+.event{
+  background-color: #F5F5F5;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.253);
+  width: 300px;
+  height: 85%;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.events-container a{
+  color: black;
+  text-decoration: none;
+}
+
+.events-container a .event:hover{
+  background-color: #e5e5e5;
+}
+
+.hostname{
+  margin-top: 0px;
+  font-weight: bold;
+  color: rgb(110, 110, 110);
+}
+
+.event-info-grid{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 30px 30px 30px 30px;
+  row-gap: 10px;
+  column-gap: 5px;
+  align-items: center;
+  justify-content: start;
+  grid-row: auto;
+  width: 100%;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.event-info-grid .fas{
+  align-self: center;
+  justify-self: center;
+}
+
+.event-info-grid .far{
+  align-self: center;
+  justify-self: center;
+}
+
+.fas{
+  margin-right: 10px;
+}
+
+.far{
+  margin-right: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #dadada;
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(46, 46, 46);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(70, 70, 70);
+}

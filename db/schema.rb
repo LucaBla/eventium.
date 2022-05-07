@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_03_211812) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_07_195340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_211812) do
     t.integer "host_id"
     t.text "description"
     t.datetime "event_date"
+    t.string "location"
   end
 
   create_table "invitations", force: :cascade do |t|

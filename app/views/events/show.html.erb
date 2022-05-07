@@ -1,6 +1,6 @@
 
 
-<%= render @event %>
+<%= render partial: 'events/event_show', object: @event %>
 
 <div>
   <%= link_to "Host Profile", {controller: 'users', action: :show, id: @event.host.id}, user: @event.host%>

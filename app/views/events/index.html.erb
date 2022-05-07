@@ -1,26 +1,26 @@
-
-<h1>Events</h1>
-
-<div id="events">
-  <h2>Future Events:</h2>
-    <% @events.future.each do |event| %>
-      <%= render event %>
-      <p>
-        <%= link_to "Show this event", event %>
-      </p>
-    <% end %>
-  <h2>Past Events:</h2>
-    <% @events.past.each do |event| %>
-      <%= render event %>
-      <p>
-        <%= link_to "Show this event", event %>
-      </p>
-    <% end %>
+<div class="landing">
+  <div class="image-wrapper">
+    <%= image_tag 'index-pic.jpg', class: 'index-pic' %>
+  </div>
+  <div id="top-of-site-pixel-anchor"></div>
+  <div class="upcoming-events">
+    <h2>Upcoming Events:</h2>
+    <div class="upcoming-events-container events-container">
+      <% @events.future.each do |event| %>
+        <%= link_to event do %>
+          <%= render event %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="past-events">
+    <h2>Past Events:</h2>
+    <div class="past-events-container events-container">
+      <% @events.past.each do |event| %>
+        <%= link_to event do %>
+          <%= render event %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New event", new_event_path %>
-
-<%= link_to "Profile", {controller: 'users', action: :show, id: current_user.id} %>
-<%= button_to 'Log out', destroy_user_session_path, method: :delete %>
-
-

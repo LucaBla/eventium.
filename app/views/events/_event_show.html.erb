@@ -1,0 +1,10 @@
+<div id="<%= dom_id @event %>" class='event'>
+   <h3><%= @event.title %></h3>
+  <p class='hostname'><%= @event.host.username %></p>
+  <div class="event-info-grid">
+    <i class="fas fa-map-marker-alt"></i><p class='location'>Location </p>
+    <i class="fas fa-calendar"></i><p class='date'><%= @event.event_date %></p>
+    <i class="fas fa-users"></i><p class="attendants">123</p>
+  </div>
+  <%= @event.description %>
+</div>

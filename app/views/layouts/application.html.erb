@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PrivateEvents</title>
+    <title>eventium.</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/5ed27ce724.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -18,15 +19,30 @@
       </div>
     <% end %>
 
-    <% if user_signed_in? && current_user.received_invites.size != nil%>
-      <strong>Invites:</strong>
-      <% current_user.received_invites.each do |invitation| %>
-      <%= render invitation %>
-      <p>
-        <%= link_to "Show this invitation", invitation %>
-      </p>
-    <% end %>
-    <% end %>
+    <nav class="<%= 'root-nav' if request.fullpath == '/' || request.fullpath == '/events' %>">
+      <div class="brand">
+        <h1>eventium.</h1>
+        <p class='description'>host and attend the best events around the globe.</p>
+      </div>
+      <% if !user_signed_in? %>
+        <div class="account-btns">
+          <%= button_to 'Log in', new_user_session_path, method: :get %>
+          <%= button_to 'Sign up', new_user_registration_path, method: :get %>
+        </div>
+      <% else %>
+        <div class="account-btns">
+          <%= link_to invitations_path, class: 'invitations-link' do%>
+            <i class="fas fa-envelope" data-count="<%= current_user.received_invites.count %>"></i>
+          <% end %>
+          <%= link_to "Create an event", new_event_path %>
+          <%= link_to "Profile", {controller: 'users', action: :show, id: current_user.id} %>
+          <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+        </div>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
+  <footer>
+    Made by <strong>Luca Blazevic</strong> <a href="https://github.com/LucaBla"><i class="fab fa-github"></i></a>
+  </footer>
 </html>

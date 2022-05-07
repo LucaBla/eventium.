@@ -13,3 +13,234 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   padding: 0px;
+   margin: 0px;
+   overflow-x: hidden;
+ }
+
+ nav{
+  position: sticky;
+  color: white;
+  top: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  z-index: 100000000;
+  background-color: rgb(46, 46, 46);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: 0px;
+  width: 95vw;
+ }
+
+ nav h1{
+  font-size: 32px;
+  padding-top: 0px;
+   margin-top: 0px;
+   margin-bottom: 0px;
+ }
+
+ nav .description{
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px;
+ }
+
+ .root-nav{
+  position: fixed;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  padding-top: 0px;
+  padding-left: 40px;
+  padding-right: 40px;
+  z-index: 100000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: 0px;
+  width: 95vw;
+ }
+
+ .root-nav h1{
+   font-size: 64px;
+   padding-top: 0px;
+   margin-top: 20px;
+   margin-bottom: 0px;
+ }
+
+ .root-nav .description{
+   font-size: 30px;
+   font-weight: bold;
+   margin: 0px;
+ }
+
+ .account-btns{
+   display: flex;
+   gap: 30px;
+   align-items: center;
+   justify-self: flex-end;
+ }
+
+ .account-btns button{
+   background-color: transparent;
+   border: 0px solid transparent;
+   border-bottom: 2px solid transparent;
+   color: white;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 0px;
+ }
+
+ .account-btns a{
+  background-color: transparent;
+  border: 0px solid transparent;
+  border-bottom: 2px solid transparent;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-btns i{
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  margin: 0px;
+}
+
+.invitations-link{
+  position: relative;
+}
+
+.invitations-link i:after{
+  position: absolute;
+  content: attr(data-count);
+  color: black;
+  top: -4px;
+  right: -5px;
+  background-color: rgba(0, 255, 255, 0.9);
+  padding: 1px;
+  width: 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  text-align: center;
+}
+
+ .account-btns button:hover{
+   cursor: pointer;
+   border-bottom: 2px solid white;
+   border-radius: 2px;
+ }
+
+ .account-btns a:hover{
+  cursor: pointer;
+  border-bottom: 2px solid white;
+  border-radius: 2px;
+}
+
+.account-btns .invitations-link:hover{
+  border-bottom: 2px solid transparent;
+  color: rgb(221, 221, 221);
+}
+
+footer{
+  text-align: center;
+  background-color: rgb(46, 46, 46);
+  padding: 30px 30px 30px 30px;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  width: 100vw;
+}
+
+footer a{
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+  margin-left: 5px;
+}
+
+footer a i:hover{
+  animation: github 0.5s ease-in-out forwards;
+}
+
+#top-of-site-pixel-anchor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 100px;
+  left: 0;
+}
+
+.header-not-at-top{
+  animation: nav-get-bg 0.5s ease 0.25s forwards;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-not-at-top .brand{
+  justify-content: center;
+  align-items: center;
+}
+
+.header-not-at-top h1{
+  animation: nav-smaller-header 0.75s ease 0s forwards;
+  margin-top: 0px;
+}
+
+.header-not-at-top .description{
+  animation: nav-smaller-desc 0.75s;
+  font-size: 15px;
+}
+
+.header-at-top h1{
+  animation: undo-h1 1s forwards;
+}
+
+.header-at-top .description{
+  animation: undo-desc 1s forwards;
+}
+
+.fa-map-marker-alt{
+  color: rgb(216, 32, 32);
+}
+
+@keyframes nav-get-bg{
+  from {background-color: transparent;}
+  to {background-color: rgb(46, 46, 46);}
+}
+
+@keyframes nav-smaller-header{
+  from {font-size: 64px;}
+  to {font-size: 32px;}
+}
+
+@keyframes nav-smaller-desc{
+  from {font-size: 30px;}
+  to {font-size: 15px;}
+}
+
+@keyframes undo-h1{
+  from {font-size: 32px;}
+  to {font-size: 64px;}
+}
+
+@keyframes undo-desc{
+  from {font-size: 15px;}
+  to {font-size: 30px;}
+}
+
+@keyframes github{
+  from {transform: scale(1);}
+  to {transform: scale(1.5);}
+}
+

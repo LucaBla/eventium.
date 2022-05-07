@@ -12,3 +12,14 @@
 </div>
 
 <%= link_to "New invitation", new_invitation_path %>
+
+
+<% if user_signed_in? && current_user.received_invites.size != nil%>
+      <strong>Invites:</strong>
+      <% current_user.received_invites.each do |invitation| %>
+        <%= render invitation %>
+        <p>
+          <%= link_to "Show this invitation", invitation %>
+        </p>
+      <% end %>
+    <% end %>
