@@ -52,6 +52,11 @@
   margin: 0px;
  }
 
+ .title-link{
+  text-decoration: none;
+  color: white;
+ }
+
  .root-nav{
   position: fixed;
   background-color: transparent;

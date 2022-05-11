@@ -1,10 +1,11 @@
 <div id="<%= dom_id event %>" class='event'>
-   <h3><%= event.title %></h3>
-  <p class='hostname'><%= event.host.username %></p>
-  <div class="event-info-grid">
-    <i class="fas fa-map-marker-alt"></i><p class='location'><%= event.location %> </p>
-    <i class="far fa-calendar"></i><p class='date'><%= event.event_date.to_fs(:day_month_year) %></p>
-    <i class="far fa-clock"></i><p class='time'><%= event.event_date.to_fs(:time) %></p>
-    <i class="fas fa-users"></i><p class="attendants"><%= event.attendees.count %></p>
+  <div class="title-wrapper"><h3><%= event.title %></h3><p class='hostname'><%= event.host.username %></p></div>
+  <div class="event-content">
+    <div class="event-info-grid">
+      <i class="fas fa-map-marker-alt"></i><p class='location'><%= event.location %> </p>
+      <i class="far fa-calendar"></i><p class='date'><%= event.event_date.to_fs(:day_month_year) %></p>
+      <i class="far fa-clock"></i><p class='time'><%= event.event_date.to_fs(:time) %></p>
+      <i class="fas fa-users"></i><p class="attendants"><%= event.attendees.count %></p>
+    </div>
   </div>
 </div>

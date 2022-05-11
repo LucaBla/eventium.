@@ -21,8 +21,10 @@
 
     <nav class="<%= 'root-nav' if request.fullpath == '/' || request.fullpath == '/events' %>">
       <div class="brand">
-        <h1>eventium.</h1>
-        <p class='description'>host and attend the best events around the globe.</p>
+        <%= link_to root_path, class: 'title-link' do%>
+          <h1>eventium.</h1>
+          <p class='description'>host and attend the best events around the globe.</p>
+        <% end %>
       </div>
       <% if !user_signed_in? %>
         <div class="account-btns">

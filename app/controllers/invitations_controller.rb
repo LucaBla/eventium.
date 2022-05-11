@@ -25,7 +25,8 @@ class InvitationsController < ApplicationController
     @user = User.find_by(username: invitation_params[:invited_user])
     #@event = Event.find(params[:event_id])
     #@event = Event.find(invitation_params[:invited_event_id])
-    @invitation = current_user.sended_invites.build(invited_user_id: @user.id, invited_event_id: invitation_params[:invited_event_id])
+    @invitation = current_user.sended_invites.build(invited_user_id: @user.id,
+                                                    invited_event_id: invitation_params[:invited_event_id])
 
     respond_to do |format|
       if @invitation.save
