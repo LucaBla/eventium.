@@ -2,14 +2,3 @@
 
 <%= render partial: 'events/event_show', object: @event %>
 
-<div>
-  <%= link_to "Host Profile", {controller: 'users', action: :show, id: @event.host.id}, user: @event.host%>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %> |
-  <%= button_to "Join Event", event_joinings_path(event_id: @event.id), method: :post %>
-  <%= button_to "Leave Event", event_joining_path(event_id: @event.id), method: :delete %>
-
-  <%= button_to "Destroy this event", @event, method: :delete %>
-  <br>
-  <%= link_to 'Invite User', new_invitation_path(event_id: @event.id), method: :get %>
-</div>

@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all.order(event_date: :desc)
+    @events = Event.all.order(event_date: :asc)
   end
 
   # GET /events/1 or /events/1.json
@@ -18,6 +18,9 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    if @event.host_id != current_user.id || @event.event_date < Time.now
+      redirect_to root_path
+    end
   end
 
   # POST /events or /events.json

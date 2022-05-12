@@ -1,0 +1,231 @@
+.event-show{
+  position: relative;
+  display: grid;
+  grid-template: 
+              'header header header' 100px
+              'infos desc actions' auto /1fr 1fr 1fr;
+  row-gap: 40px;
+  height: 80vh;
+  background-image: linear-gradient(to right, rgba(173, 83, 137, 0.9), rgba(59, 16, 83, 0.9)),
+                    url(eventshow-people.jpg);
+  background-size: cover;
+  background-position: 80% 20%;
+  font-size: 22px;
+  padding: 50px 0px;
+}
+
+.event-show .title-wrapper{
+  background-image: radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgb(255, 255, 255) 0%,
+                                   rgb(235, 235, 235) 100.2% );
+  color: black;
+  width: 31%;
+  height: auto;
+  justify-self: center;
+  padding: 20px 20px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  grid-area: header;
+}
+
+.title-right{
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  gap: 10px;
+}
+
+.event-show h3{
+  font-size: 30px;
+}
+
+.event-show .hostname{
+  font-size: 20px;
+}
+
+.event-show .hostname a{
+  text-decoration: none;
+  color: #b9bd81;
+}
+
+.event-show .event-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.event-show .event-informations{
+  background-image: radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgb(255, 255, 255) 0%,
+                                   rgb(235, 235, 235) 100.2% );
+
+  padding: 40px 40px;
+  color: black;
+  width: 250px;
+  height: fit-content;
+  justify-self: center;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+
+  grid-area: infos;
+}
+
+.event-show .event-info-grid{
+  grid-template-rows: auto auto auto auto;
+  row-gap: 25px;
+}
+
+.event-show .event-info-grid p {
+  margin: 0px;
+}
+
+.event-show .event-informations i{
+  font-size: 30px;
+}
+
+.event-show h4{
+  font-size: 22px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.event-show p{
+  font-size: 22px;
+}
+
+.event-show .event-description{
+  background-image: radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgb(255, 255, 255) 0%,
+                                   rgb(235, 235, 235) 100.2% );
+
+  padding: 40px 40px;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+  height: auto;
+  overflow-y: scroll;
+}
+
+.event-show .event-description h4{
+  margin: 0px;
+  margin-bottom: 5px;
+  padding: 0px;
+
+  grid-area: desc;
+}
+
+.event-show .event-actions{
+  background-image: radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgb(255, 255, 255) 0%,
+                                   rgb(235, 235, 235) 100.2% );
+
+  padding: 40px 40px;
+  color: black;
+  width: 250px;
+  justify-self: center;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+  height: fit-content;
+
+  grid-area: actions;
+}
+
+.join-event-btn{
+  background-color: rgb(83, 173, 83);
+  width: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  height: 40px;
+  border: none;
+}
+
+.join-event-btn:hover{
+  cursor: pointer;
+  box-shadow: 3px 3px 0px 0px rgb(255, 82, 82);
+}
+
+.leave-event-btn{
+  background-color: rgb(206, 90, 44);
+  width: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  height: 40px;
+  border: none;
+}
+
+.leave-event-btn:hover{
+  cursor: pointer;
+  box-shadow: 3px 3px 0px 0px rgb(255, 82, 82);
+}
+
+.invite-wrapper{
+  display: flex;
+  text-decoration: none;
+  padding: 1px 6px;
+  background-color: rgba(173, 83, 137, 1);
+  width: 150px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  height: 40px;
+  border: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.invite-wrapper:hover{
+  cursor: pointer;
+  box-shadow: 3px 3px 0px 0px rgb(255, 82, 82);
+}
+
+.invite-link{
+  text-decoration: none;
+  color: white;
+  
+}
+
+.host-btns{
+  border: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+.host-btns i {
+  margin: 0px;
+}
+
+.host-btns:hover i{
+  cursor: pointer;
+  text-shadow: 2px 2px rgb(255, 82, 82);
+}
+
+.host-btns.invite-link{
+  display: block;
+  color: rgba(173, 83, 137, 1);
+  text-align: center;
+  height: fit-content;
+  align-self: flex-end;
+  width: 32px;
+}
+
+.host-btns.invite-link i{
+  text-align: end;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.host-btns.edit-btn{
+  color: rgba(173, 83, 137, 1);
+}
+
+.host-btns.delete-btn{
+  color: rgb(206, 90, 44);
+}

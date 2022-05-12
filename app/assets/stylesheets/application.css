@@ -21,6 +21,10 @@
    overflow-x: hidden;
  }
 
+ textarea{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
  nav{
   position: sticky;
   color: white;
@@ -37,6 +41,7 @@
   align-content: space-between;
   margin: 0px;
   width: 95vw;
+  text-shadow: 2px 2px black;
  }
 
  nav h1{

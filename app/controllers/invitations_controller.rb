@@ -14,10 +14,14 @@ class InvitationsController < ApplicationController
   def new
     @invitation = current_user.sended_invites.build
     @event = Event.find(params[:event_id])
+    if @event.event_date < Time.now
+      redirect_to root_path
+    end
   end
 
   # GET /invitations/1/edit
   def edit
+    redirect_to root_path
   end
 
   # POST /invitations or /invitations.json
