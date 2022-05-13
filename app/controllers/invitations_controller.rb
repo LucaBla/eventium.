@@ -27,18 +27,25 @@ class InvitationsController < ApplicationController
   # POST /invitations or /invitations.json
   def create
     @user = User.find_by(username: invitation_params[:invited_user])
-    #@event = Event.find(params[:event_id])
+    @event = Event.find(invitation_params[:invited_event_id])
     #@event = Event.find(invitation_params[:invited_event_id])
-    @invitation = current_user.sended_invites.build(invited_user_id: @user.id,
-                                                    invited_event_id: invitation_params[:invited_event_id])
 
-    respond_to do |format|
-      if @invitation.save
-        format.html { redirect_to invitation_url(@invitation), notice: "Invitation was successfully created." }
-        format.json { render :show, status: :created, location: @invitation }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @invitation.errors, status: :unprocessable_entity }
+    if @user.nil? || Event.find_by(id: @event.id).attendees.find_by(id: @user.id)
+      redirect_to new_invitation_path(event_id: @event.id), notice: "User is already attending or not existing"
+    elsif !Invitation.where(invited_event_id: @event.id).where(invited_user_id: @user.id).empty?
+      redirect_to new_invitation_path(event_id: @event.id), notice: "User is already invited"
+    else
+      @invitation = current_user.sended_invites.build(invited_user_id: @user.id,
+        invited_event_id: invitation_params[:invited_event_id])
+
+      respond_to do |format|
+        if @invitation.save
+          format.html { redirect_to event_url(@invitation.invited_event_id), notice: "Invitation was successfully created." }
+          format.json { render :show, status: :created, location: @invitation }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @invitation.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
