@@ -1,16 +1,16 @@
-<div class="attended-events user-events">
-  <h1>Attended Events</h1>
+<div class="hosted-events user-events">
+  <h1>Hosted Events</h1>
   <div class="upcoming-events">
     <h2>Upcoming Events:</h2>
     <div class="profile-events-container events-container">
-      <% @user.attended_events.order(event_date: :asc).each do |event| %>
+      <% @user.hosted_events.order(event_date: :asc).each do |event| %>
         <% if event.event_date >= DateTime.now %>
           <%= link_to event do %>
             <%= render event %>
           <% end %>
         <% end %>
       <% end %>
-      <% if @user.attended_events.future.empty? %>
+      <% if @user.hosted_events.future.empty? %>
         <div class="event-placeholder"></div>
       <% end %>
     </div>
@@ -18,14 +18,14 @@
   <div class="past-events">
     <h2>Past Events:</h2>
     <div class="profile-events-container events-container">
-      <% @user.attended_events.order(event_date: :desc).each do |event| %>
+      <% @user.hosted_events.order(event_date: :desc).each do |event| %>
         <% if event.event_date < DateTime.now %>
           <%= link_to event do %>
             <%= render event %>
           <% end %>
         <% end %>
       <% end %>
-      <% if @user.attended_events.past.empty? %>
+      <% if @user.hosted_events.past.empty? %>
         <div class="event-placeholder"></div>
       <% end %>
     </div>

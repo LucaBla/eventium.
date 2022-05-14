@@ -217,7 +217,7 @@
   overflow-y: scroll;
 }
 
-p.hostname{
+.event-attendees p.hostname{
   margin: 20px 0px;
 }
 

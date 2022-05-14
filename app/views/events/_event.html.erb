@@ -1,5 +1,5 @@
 <div id="<%= dom_id event %>" class='event'>
-  <div class="title-wrapper"><h3><%= event.title %></h3><p class='hostname'><%= event.host.username %></p></div>
+  <div class="title-wrapper <%= 'title-wrapper-past' if event.event_date < Time.now %>"><h3><%= event.title %></h3><p class='hostname'><%= event.host.username %></p></div>
   <div class="event-content">
     <div class="event-info-grid">
       <i class="fas fa-map-marker-alt"></i><p class='location'><%= event.location %> </p>

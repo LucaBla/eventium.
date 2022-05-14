@@ -1,15 +1,10 @@
-<h2>Profile of <%= @user.username %></h2>
+<div class="profile-background">
+  <div class="profile-content">
+    <h1 class="profile-title"><i class='hostname'><%= @user.username %>'s Profile</i></h1>
 
-<div id="hosted-events">
-  <h3>Hosted Events:</h3>
-  <% @user.hosted_events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
+    <%= render 'events/hosted_events' %>
+
+    <%= render 'events/attended_events' %>
+
+  </div>
 </div>
-
-<%= render 'events/attended_events' %>
-
-<%= link_to 'Root', root_path %>
