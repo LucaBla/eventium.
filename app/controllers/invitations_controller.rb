@@ -78,6 +78,8 @@ class InvitationsController < ApplicationController
     @user = User.find(@invitation.invited_user_id)
     @event_joining = EventJoining.create(attended_event_id: @event.id, joined_user_id: @user.id)
 
+    @invitation.destroy
+
     respond_to do |format|
       format.html { redirect_to @event, notice: "Invitation was successfully accepted." }
       format.json { head :no_content }

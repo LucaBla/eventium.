@@ -1,7 +1,7 @@
 .profile-background{
-  background-image: linear-gradient(to right, rgba(173, 83, 137, 0.9), rgba(59, 16, 83, 0.9));
+  background-image: linear-gradient(to right, rgba(173, 83, 137, 0.9), rgba(59, 16, 83, 0.9)), url('profile-man.jpg');
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 40% 60%;
   min-height: 90vh;
   height: auto;
   padding-bottom: 140px;
@@ -11,7 +11,13 @@
   margin-top: 0px;
   margin-left: 40px;
   font-size: 40px;
+  text-shadow: 2px 2px black;
 }
+
+.profile-content .user-events h1{
+  text-shadow: none;
+}
+
 
 .profile-content h2{
   margin-top: 0px;

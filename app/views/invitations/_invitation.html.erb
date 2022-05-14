@@ -1,4 +1,19 @@
-<div id="<%= dom_id invitation %>">
-  You are invited by <%= invitation.inviter.username %> <br>
-  to join <%= Event.find(invitation.invited_event_id).title %>
+<div id="<%= dom_id invitation %>" class="invitation">
+  <h3>Invite</h3>
+  <p class="inv-inviter">
+    Inviter: 
+    <%= link_to invitation.inviter do%>
+      <i class='hostname'><%= invitation.inviter.username %></i>
+    <% end %>
+  </p>
+  <p class="inv-event">
+    Event: 
+    <%= link_to Event.find(invitation.invited_event_id) do%>
+      <i class='eventname'><%= Event.find(invitation.invited_event_id).title %></i>
+    <% end %>
+  </p>
+  <div class="inv-btns">
+    <%= button_to "Accept", accept_invitation_path(invitation), method: :get, class: 'accept-inv-btn' %>
+    <%= button_to "Decline", invitation, method: :delete, class: 'decline-inv-btn' %>
+  </div>
 </div>

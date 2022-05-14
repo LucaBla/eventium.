@@ -87,6 +87,12 @@ h3{
   border-radius: 2px;
 }
 
+.title-wrapper h3{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .title-wrapper-past{
   background: linear-gradient(to right, #969696, #464646);
 }

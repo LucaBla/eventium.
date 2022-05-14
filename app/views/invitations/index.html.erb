@@ -1,25 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Invitations</h1>
-
-<div id="invitations">
-  <% @invitations.each do |invitation| %>
-    <%= render invitation %>
-    <p>
-      <%= link_to "Show this invitation", invitation %>
-    </p>
-  <% end %>
+<div class="invitations-background">
+  <div class="invitations-content">
+    <h1 class="invitations-title">Invitations</h1>
+    <div class="invitations-wrapper">
+      <div class="inv-grid">
+        <% if user_signed_in? && current_user.received_invites.size != nil%>
+          <% current_user.received_invites.each do |invitation| %>
+            <%= render invitation %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New invitation", new_invitation_path %>
-
-
-<% if user_signed_in? && current_user.received_invites.size != nil%>
-      <strong>Invites:</strong>
-      <% current_user.received_invites.each do |invitation| %>
-        <%= render invitation %>
-        <p>
-          <%= link_to "Show this invitation", invitation %>
-        </p>
-      <% end %>
-    <% end %>
