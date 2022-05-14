@@ -9,7 +9,7 @@ Link for eventium. <br/>
 note: it takes about 30 seconds for heroku to load the webapp.
 
 ### Demo test users
-<strong>E-Mail:</strong> guest@guest.com
+<strong>E-Mail:</strong> guest@guest.com<br/>
 <strong>Password:</strong> 123456
 
 ## Screenshots
