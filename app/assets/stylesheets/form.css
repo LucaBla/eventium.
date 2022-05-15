@@ -20,6 +20,35 @@
   padding: 40px 60px;
   border-radius: 8px;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.subtitle-wrapper{
+  background-color: rgba(59, 16, 83, 1);
+  color: white;
+  width: 100%;
+  border-radius: 7px 7px 0px 0px;
+  margin-left: -80px;
+  padding: 30px 120px;
+  margin-right: -80px;
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+
+.subtitle-wrapper h2{
+  font-size: 26px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -40px;
+  text-align: left;
+  max-width: 500px;
+  margin-right: auto;
+}
+
+.subtitle-wrapper p{
+  text-align: left;
+  margin-left: -40px;
+  margin-bottom: 0px;
 }
 
 .login-heading{
@@ -49,9 +78,10 @@
   justify-items: center;
   color: black;
   background-image: radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgb(255, 255, 255) 0%, rgb(235, 235, 235) 100.2% );
-  padding: 40px 80px;
+  padding: 40px 60px;
   border-radius: 8px;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
 }
 
 .signup-heading{
@@ -91,6 +121,7 @@
   padding: 40px 80px;
   border-radius: 8px;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
 }
 
 .forgotpassword-heading{
@@ -148,11 +179,16 @@
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
 }
 
+.newevent-content{
+  overflow: hidden;
+}
+
 .newevent-content h1{
   font-size: 26px;
   margin-top: 0px;
-  margin-left: auto;
-  text-align: center;
+  margin-bottom: 0px;
+  margin-left: -40px;
+  text-align: left;
   max-width: 500px;
   margin-right: auto;
 }

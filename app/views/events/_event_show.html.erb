@@ -1,31 +1,8 @@
 <div id="<%= dom_id @event %>" class='event-show'>
-  <div class="title-wrapper">
-    <div class="title-left">
-      <h3><%= @event.title %></h3>
-      <p class='hostname'>
-        <%= link_to({controller: 'users', action: :show, id: @event.host.id}, user: @event.host) do %>
-          <%= @event.host.username %>
-        <% end %>
-      </p>
-    </div>
-      <% if @event.host == current_user %>
-        <div class="title-right">
-          <% if @event.event_date > Time.now %>
-            <%= link_to new_invitation_path(event_id: @event.id), method: :get, class: 'host-btns invite-link' do%>
-              <i class="fas fa-paper-plane"></i>
-            <% end %>
-            <%= button_to edit_event_path(@event), method: :get, class: 'host-btns edit-btn' do%>
-              <i class="fas fa-pen-alt"></i>
-            <% end %>
-          <% end %>
-          <%= button_to @event, method: :delete, class: 'host-btns delete-btn' do%>
-            <i class="fas fa-eraser"></i>
-          <% end %>
-        </div>
-      <% end %>
-  </div>
     <div class="event-informations">
-      <h4>Informations:</h4>
+      <div class="subtitle-wrapper">
+        <h4>Informations:</h4>
+      </div>
       <div class="event-info-grid">
         <i class="fas fa-map-marker-alt"></i><p class='location'><%= @event.location %> </p>
         <i class="far fa-calendar"></i><p class='<%= @event.event_date < Time.now ? 'date past' : 'date' %>'><%= @event.event_date.to_fs(:day_month_year) %></p>
@@ -33,14 +10,42 @@
         <i class="fas fa-users"></i><p class="attendants"><%= @event.attendees.count %></p>
       </div>
     </div>
-    <div class="event-description">
-      <h4>Description:</h4>
-      <%= @event.description %>
+    <div class="header-desc">
+      <div id="title-wrapper">
+        <div class="title-left">
+          <h3><%= @event.title %></h3>
+          <p class='hostname'>
+            <%= link_to({controller: 'users', action: :show, id: @event.host.id}, user: @event.host) do %>
+              <%= @event.host.username %>
+            <% end %>
+          </p>
+        </div>
+        <% if @event.host == current_user %>
+          <div class="title-right">
+            <% if @event.event_date > Time.now %>
+              <%= link_to new_invitation_path(event_id: @event.id), method: :get, class: 'host-btns invite-link' do%>
+                <i class="fas fa-paper-plane"></i>
+              <% end %>
+              <%= button_to edit_event_path(@event), method: :get, class: 'host-btns edit-btn' do%>
+                <i class="fas fa-pen-alt"></i>
+              <% end %>
+            <% end %>
+            <%= button_to @event, method: :delete, class: 'host-btns delete-btn' do%>
+              <i class="fas fa-eraser"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="event-description">
+        <%= @event.description %>
+      </div>
     </div>
     <% if @event.event_date > Time.now %>
       <div class="event-actions-and-attendees">
         <div class="event-actions">
-          <h4>Actions:</h4>
+          <div class="subtitle-wrapper">
+            <h4>Actions:</h4>
+            </div>
           <% if !@event.attendees.exists?(current_user.id)%>
             <%= button_to "Join", event_joinings_path(event_id: @event.id), method: :post, class: 'join-event-btn' %>
           <% else %>
@@ -53,15 +58,19 @@
           <% end %>
         </div>
         <div class="event-attendees">
-          <h4>Attendees:</h4>
-          <% @event.attendees.each do |attendee| %>
-            <p class='hostname'>
-              <%= link_to({controller: 'users', action: :show, id: attendee.id}, user: attendee) do %>
-                <%= attendee.username %>
-              <% end %>
-            </p>
-            <hr>
-          <% end %>
+          <div class="subtitle-wrapper">
+            <h4>Attendees:</h4>
+          </div>
+          <div class="event-attendees-content">
+            <% @event.attendees.each do |attendee| %>
+              <p class='hostname'>
+                <%= link_to({controller: 'users', action: :show, id: attendee.id}, user: attendee) do %>
+                  <%= attendee.username %>
+                <% end %>
+              </p>
+              <hr>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

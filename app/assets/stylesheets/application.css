@@ -236,6 +236,10 @@ footer a i:hover{
   color: rgb(216, 32, 32);
 }
 
+.event .event-content .event-info-grid .fa-map-marker-alt{
+  color: rgb(216, 32, 32);
+}
+
 .alerts-and-notices{
   background-color: white;
   box-shadow: 1px 1px 10px 1px rgb(0 0 0 / 80%);

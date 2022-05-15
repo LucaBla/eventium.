@@ -1,7 +1,9 @@
 <div class="signup-background">
   <div class="signup-content">
-    <h2 class="signup-heading">Sign up</h2>
-    <p class='subheading'>And be part of our famous events!</p>
+    <div class="subtitle-wrapper">
+      <h2 class="signup-heading">Sign up</h2>
+      <p class='subheading'>And be part of our famous events!</p>
+    </div>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
 
