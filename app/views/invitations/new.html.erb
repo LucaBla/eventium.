@@ -3,7 +3,6 @@
     <h1>Invitation for Event <%= @event.title %></h1>
 
     <%= render "form", invitation: @invitation, event: @event %>
-    <br>
     <div>
       <%= link_to "Back to Event", event_path(@event) %>
     </div>

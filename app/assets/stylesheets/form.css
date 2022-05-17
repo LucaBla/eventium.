@@ -253,6 +253,19 @@ form input{
   border: 2px solid rgba(0, 0, 0, 0.4);
 }
 
+form select{
+  height: 50px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 5px;
+  width: 560px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  background-color: white;
+}
+
 form input:focus{
   border: 2px solid rgba(93, 63, 226, 0.4);
 }

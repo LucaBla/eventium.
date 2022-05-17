@@ -40,7 +40,12 @@
   font-size: 50px;
   padding-top: 40px;
   margin-left: 10vw;
+  margin-right: 10vw;
   margin-bottom: 0px;
+  width: 79vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .profile-content .user-events{

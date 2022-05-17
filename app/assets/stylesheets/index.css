@@ -43,7 +43,7 @@ h3{
 }
 
 .upcoming-events{
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .upcoming-events h2{
@@ -51,7 +51,7 @@ h3{
 }
 
 .past-events{
-  margin-bottom: 150px;
+  margin-bottom: 160px;
 }
 
 .past-events h2{
@@ -113,6 +113,8 @@ h3{
   margin-top: 0px;
   font-weight: bold;
   color: #f4faa8;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-style: normal;
 }
 
@@ -120,7 +122,7 @@ h3{
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 30px 30px 30px 30px;
-  row-gap: 10px;
+  row-gap: 5px;
   column-gap: 5px;
   align-items: center;
   justify-content: start;
@@ -128,6 +130,16 @@ h3{
   width: 100%;
   vertical-align: middle;
   font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-info-grid p{
+  width: 225px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .event-info-grid .fas{

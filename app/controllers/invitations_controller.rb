@@ -13,6 +13,7 @@ class InvitationsController < ApplicationController
   # GET /invitations/new
   def new
     @invitation = current_user.sended_invites.build
+    @users = User.all.map { |u| [ u.username, u.id ] }
     @event = Event.find(params[:event_id])
     if @event.event_date < Time.now
       redirect_to root_path
@@ -26,7 +27,7 @@ class InvitationsController < ApplicationController
 
   # POST /invitations or /invitations.json
   def create
-    @user = User.find_by(username: invitation_params[:invited_user])
+    @user = User.find_by(id: invitation_params[:invited_user])
     @event = Event.find(invitation_params[:invited_event_id])
     #@event = Event.find(invitation_params[:invited_event_id])
 

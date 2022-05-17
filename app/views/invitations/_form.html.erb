@@ -15,7 +15,8 @@
 
   <div class='field'>
     <%= form.label :invited_user, 'User to invite', style: "display: block" %>
-    <%= form.text_field :invited_user %>
+    <%= form.select :invited_user, @users, prompt: "Select Someone" %>
+    <%# <%= form.text_field :invited_user %>
   </div>
 
   <div>
